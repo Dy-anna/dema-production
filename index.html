@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEMA Production · Captation d'événements d'entreprise, livrée le jour même</title>
+<meta name="description" content="DEMA Production filme et photographie vos événements d'entreprise. Livraison express : vos contenus sont prêts à publier le jour même.">
+<meta property="og:title" content="DEMA Production · Votre événement, en ligne le jour même">
+<meta property="og:description" content="Captation photo et vidéo d'événements d'entreprise, avec livraison le jour même.">
+<meta property="og:image" content="/img/hero.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0e0e'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='800' font-size='34' text-anchor='middle' fill='%23f2f2f2'%3ED%3C/text%3E%3Ccircle cx='49' cy='42' r='4' fill='%23E8B04B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+<style>
+:root{--bg:#0e0e0e;--bg2:#151515;--line:#242424;--txt:#f2f2f2;--mut:#bdbdbd;--acc:#E8B04B;--serif:'Playfair Display',Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .2s ease,opacity .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-acc{background:var(--acc);color:#0e0e0e}
+.btn-light{background:var(--txt);color:#0e0e0e}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid #555}
+.eyebrow{margin:0;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--mut)}
+h2{margin:0;font-size:clamp(32px,4.5vw,54px);line-height:1.05;font-weight:700;letter-spacing:-.02em}
+.head{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(14,14,14,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+.logo{font-weight:800;letter-spacing:.08em;font-size:18px;text-decoration:none}
+.logo span{color:var(--acc)}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 77px);min-height:calc(100svh - 77px);display:flex;align-items:flex-end;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:zoom 18s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,14,.6) 0%,rgba(14,14,14,.45) 40%,rgba(14,14,14,.96) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-bottom:72px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.hero-txt{display:flex;flex-direction:column;gap:26px;flex:1 1 560px;min-width:0}
+.kicker{margin:0;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#d0d0d0}
+.hero h1{margin:0;font-size:clamp(44px,7vw,96px);line-height:1;font-weight:700;letter-spacing:-.02em}
+.hero p.lead{margin:0;max-width:540px;font-size:18px;line-height:1.6;color:#d0d0d0}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.badge{position:relative;width:150px;height:150px;flex:0 0 auto;display:block}
+.badge svg.ring{position:absolute;inset:0;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge .core{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:var(--acc);display:flex;align-items:center;justify-content:center;color:#0e0e0e}
+
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:24px 0}
+.track{display:flex;gap:44px;width:max-content;white-space:nowrap;font-size:clamp(26px,3.4vw,44px);font-weight:600;animation:marq 30s linear infinite}
+.track i{font-style:normal;color:var(--acc)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* offer */
+.offer{padding:120px 0 0}
+.offer .wrap{display:flex;flex-direction:column;gap:56px}
+.offer h2{max-width:840px}
+.offer h2 em{font-style:normal;color:var(--acc)}
+.offer .sub{margin:0;max-width:620px;font-size:17px;line-height:1.6;color:#c8c8c8}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.step{border:1px solid #2a2a2a;border-radius:10px;padding:32px;display:flex;flex-direction:column;gap:14px;background:linear-gradient(180deg,#121212,#0e0e0e)}
+.step b{font-size:14px;color:var(--acc)}
+.step strong{font-size:22px;font-weight:600}
+.step span{font-size:15px;line-height:1.6;color:var(--mut)}
+
+/* films */
+.films{padding:120px 0 60px}
+.films .wrap{display:flex;flex-direction:column;gap:56px}
+.grid-films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.film{position:relative;display:block;height:400px;border-radius:8px;overflow:hidden;background:#1a1a1a;border:0;padding:0;cursor:pointer;color:var(--txt);text-align:left;font-family:inherit}
+.film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.film:hover img{transform:scale(1.05)}
+.film::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.8) 100%)}
+.film .play{position:absolute;z-index:1;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;border:1px solid rgba(255,255,255,.8);background:rgba(0,0,0,.25);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;transition:background .3s ease,transform .3s ease}
+.film:hover .play{background:var(--acc);border-color:var(--acc);transform:scale(1.08)}
+.film:hover .play svg path{fill:#0e0e0e}
+.film .meta{position:absolute;z-index:1;left:28px;right:28px;bottom:26px;display:flex;flex-direction:column;gap:6px}
+.film .meta strong{font-size:26px;font-weight:600}
+.film .meta small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d6d6d6}
+
+/* photos */
+.photos{padding:60px 0 120px}
+.photos .wrap{display:flex;flex-direction:column;gap:56px}
+.grid-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(160px,28vw,380px);gap:16px}
+.ph{border-radius:8px;overflow:hidden;background:#1a1a1a;border:0;padding:0;cursor:zoom-in}
+.ph.w{grid-column:span 2}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.ph:hover img{transform:scale(1.04)}
+
+/* rdv */
+.rdv{background:var(--bg2);border-top:1px solid var(--line)}
+.rdv .wrap{padding-top:120px;padding-bottom:120px;display:flex;gap:64px;flex-wrap:wrap;align-items:center}
+.rdv-txt{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.rdv-txt p{margin:0;font-size:17px;line-height:1.6;color:#c8c8c8}
+.list{display:flex;flex-direction:column;gap:14px;padding-top:6px}
+.list div{display:flex;gap:14px;align-items:center;font-size:16px}
+.list div::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);flex:0 0 auto}
+.card{flex:1 1 520px;min-width:0;border-radius:14px;overflow:hidden;background:var(--bg);border:1px solid #2a2a2a}
+.card-top{position:relative;height:260px}
+.card-top img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.card-top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,14,.1),rgba(14,14,14,.95))}
+.pill-acc{position:absolute;z-index:1;left:32px;bottom:24px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#0e0e0e;background:var(--acc);padding:8px 14px;border-radius:999px}
+.card-body{padding:32px 32px 36px;display:flex;flex-direction:column;gap:24px}
+.card-body h3{margin:0;font-size:28px;font-weight:700;letter-spacing:-.01em}
+.card-body .who{margin:6px 0 0;font-size:15px;color:var(--mut)}
+.pills{display:flex;gap:12px;flex-wrap:wrap}
+.pills span{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#e0e0e0;border:1px solid #333;border-radius:999px;padding:10px 16px}
+.sep{height:1px;background:#262626}
+.card .btn{width:100%;font-size:16px;font-weight:700;padding:18px 28px}
+
+footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:#a3a3a3;border-top:1px solid var(--line)}
+footer a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;min-height:44px}
+footer a:hover{color:var(--txt)}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal .box{width:min(1100px,100%);aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden}
+.modal .box iframe{width:100%;height:100%;border:0;display:block}
+.modal .pic{max-width:min(1100px,100%);max-height:88vh;border-radius:6px;object-fit:contain}
+.close{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid #555;background:rgba(14,14,14,.7);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.close:hover{border-color:#fff}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .steps{grid-template-columns:1fr}
+  .grid-films{grid-template-columns:1fr}
+  .film{height:260px}
+  .grid-photos{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:220px}
+  .ph.w{grid-column:span 2}
+  .badge{display:none}
+  .hero .wrap{padding-bottom:48px}
+  .offer,.films{padding-top:88px}
+  .rdv .wrap{padding-top:88px;padding-bottom:88px}
+  header .btn{padding:10px 16px;font-size:13px;min-height:44px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="logo">DEMA Production<span>.</span></a>
+    <a href="#rdv" class="btn btn-light">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <img src="/img/hero.webp" alt="" fetchpriority="high">
+  <div class="wrap">
+    <div class="hero-txt">
+      <p class="kicker">DEMA Production · Événements d’entreprise</p>
+      <h1>Votre événement,<br><span class="serif">en ligne le jour même</span></h1>
+      <p class="lead">Captation photo et vidéo de vos événements d’entreprise, avec livraison express : vos contenus sont prêts à publier le jour même.</p>
+      <div class="ctas">
+        <a href="#rdv" class="btn btn-acc">Prendre rendez-vous</a>
+        <a href="#films" class="btn btn-ghost">Voir nos films</a>
+      </div>
+    </div>
+    <a href="#films" class="badge" aria-label="Voir nos films">
+      <svg class="ring" viewBox="0 0 150 150" width="150" height="150" aria-hidden="true">
+        <defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
+        <text fill="#f2f2f2" font-size="11.5" letter-spacing="3" font-family="Inter, sans-serif"><textPath href="#circ">LIVRAISON EXPRESS · LE JOUR MÊME · </textPath></text>
+      </svg>
+      <span class="core"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#0e0e0e"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>CAPTATION D'ÉVÉNEMENTS</span><i>—</i><span>VIDÉO</span><i>—</i><span>PHOTO</span><i>—</i><span>LIVRAISON LE JOUR MÊME</span><i>—</i>
+    <span>CAPTATION D'ÉVÉNEMENTS</span><i>—</i><span>VIDÉO</span><i>—</i><span>PHOTO</span><i>—</i><span>LIVRAISON LE JOUR MÊME</span><i>—</i>
+  </div>
+</div>
+
+<section class="offer" id="offre">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">notre offre.</p>
+      <h2>La livraison <em>express</em> : tourné, monté et posté le jour même</h2>
+      <p class="sub">Vos contenus sortent pendant que votre événement fait encore parler de lui.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><b>01</b><strong>Captation</strong><span>Photo et vidéo pendant votre événement : temps forts, intervenants, ambiance.</span></div>
+      <div class="step reveal"><b>02</b><strong>Montage express</strong><span>Sélection des photos et montage de la vidéo dans la foulée.</span></div>
+      <div class="step reveal"><b>03</b><strong>Posté le jour même</strong><span>Vos contenus sont livrés et prêts à publier sur vos réseaux avant la fin de la journée.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="films" id="films">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">réalisations.</p>
+      <h2>Nos films</h2>
+    </div>
+    <div class="grid-films">
+      <button class="film reveal" data-yt="k3KDI5_aaSY" aria-label="Lire la vidéo Africa Day">
+        <img src="/img/v-africaday.webp" alt="" loading="lazy">
+        <span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span>
+        <span class="meta"><strong>Africa Day</strong><small>Événement</small></span>
+      </button>
+      <button class="film reveal" data-yt="2EXo-99ed2Q" aria-label="Lire la vidéo MEDEF">
+        <img src="/img/v-medef.webp" alt="" loading="lazy">
+        <span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span>
+        <span class="meta"><strong>MEDEF</strong><small>Événement</small></span>
+      </button>
+      <button class="film reveal" data-yt="djxmrc1i19s" aria-label="Lire la vidéo SCOR">
+        <img src="/img/v-scor.webp" alt="" loading="lazy">
+        <span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span>
+        <span class="meta"><strong>SCOR</strong><small>Événement</small></span>
+      </button>
+      <button class="film reveal" data-yt="OwMx_dFWQD0" aria-label="Lire la vidéo Gala French Africa Foundation">
+        <img src="/img/v-gala.webp" alt="" loading="lazy">
+        <span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span>
+        <span class="meta"><strong>Gala French Africa Foundation</strong><small>Événement</small></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="photos" id="photos">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">en images.</p>
+      <h2>Nos photos</h2>
+    </div>
+    <div class="grid-photos">
+      <button class="ph w reveal"><img src="/img/g-amphi.webp" alt="Vue d’ensemble de l’amphithéâtre pendant la cérémonie d’ouverture" loading="lazy"></button>
+      <button class="ph reveal"><img src="/img/g-ministre.webp" alt="Discours au pupitre lors d’Africa Day" loading="lazy"></button>
+      <button class="ph reveal"><img src="/img/g-poignee.webp" alt="Poignée de main lors d’une signature" loading="lazy"></button>
+      <button class="ph w reveal"><img src="/img/g-panel.webp" alt="Panel d’intervenants sur scène" loading="lazy"></button>
+      <button class="ph reveal"><img src="/img/g-public.webp" alt="Invités souriants au premier rang" loading="lazy"></button>
+      <button class="ph reveal"><img src="/img/g-pouce.webp" alt="Intervenant sur scène, pouce levé" loading="lazy"></button>
+      <button class="ph reveal"><img src="/img/g-accueil.webp" alt="Accueil des invités dans une cour" loading="lazy"></button>
+      <button class="ph reveal"><img src="/img/g-arrivee.webp" alt="Arrivée de personnalités" loading="lazy"></button>
+      <button class="ph w reveal"><img src="/img/g-scene.webp" alt="Table ronde devant le public" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="rdv" id="rdv">
+  <div class="wrap">
+    <div class="rdv-txt reveal">
+      <p class="eyebrow">parlons-en.</p>
+      <h2>Un événement<br>à couvrir ?</h2>
+      <p>Réservez un créneau de 30 minutes. On échange sur votre événement et on vous propose une approche adaptée.</p>
+      <div class="list">
+        <div>Votre événement et vos objectifs</div>
+        <div>Les contenus à livrer le jour même</div>
+        <div>Planning et budget</div>
+      </div>
+    </div>
+    <div class="card reveal">
+      <div class="card-top">
+        <img src="/img/g-poignee.webp" alt="" loading="lazy">
+        <span class="pill-acc">Livraison le jour même</span>
+      </div>
+      <div class="card-body">
+        <div>
+          <h3>Rendez-vous découverte</h3>
+          <p class="who">Avec l’équipe DEMA Production</p>
+        </div>
+        <div class="pills">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Réservation en ligne</span>
+        </div>
+        <div class="sep"></div>
+        <a href="https://calendly.com/m-desirbitoukou/meeting-decouverte" class="btn btn-acc" id="book">Choisir mon créneau
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span style="font-weight:700;letter-spacing:.08em;color:#f2f2f2">DEMA Production<span style="color:var(--acc)">.</span></span>
+    <a href="https://www.instagram.com/dema.visual/" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>@dema.visual</a>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Lecteur">
+  <button class="close" id="close" aria-label="Fermer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div id="slot"></div>
+</div>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+(function(){
+  var modal=document.getElementById('modal'),slot=document.getElementById('slot');
+  function open(html){slot.innerHTML=html;modal.classList.add('open');document.body.style.overflow='hidden';document.getElementById('close').focus();}
+  function close(){modal.classList.remove('open');slot.innerHTML='';document.body.style.overflow='';}
+  document.querySelectorAll('.film').forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.getAttribute('data-yt');
+      open('<div class="box"><iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1" title="Vidéo" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>');
+    });
+  });
+  document.querySelectorAll('.ph').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.querySelector('img');
+      open('<img class="pic" src="'+i.getAttribute('src')+'" alt="'+i.getAttribute('alt').replace(/"/g,'&quot;')+'">');
+    });
+  });
+  document.getElementById('close').addEventListener('click',close);
+  modal.addEventListener('click',function(e){if(e.target===modal)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))close();});
+
+  document.getElementById('book').addEventListener('click',function(e){
+    if(window.Calendly){e.preventDefault();Calendly.initPopupWidget({url:'https://calendly.com/m-desirbitoukou/meeting-decouverte?hide_gdpr_banner=1&primary_color=e8b04b'});}
+  });
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add('in');});}
+})();
+</script>
+</body>
+</html>
