@@ -4,75 +4,166 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DEMA Production · Montage vidéo pour youtubeurs</title>
-<meta name="description" content="Montage vidéo pour créateurs de contenu YouTube : rythme, rétention, motion design et formats courts.">
+<meta name="description" content="Montage vidéo pour créateurs de contenu YouTube : rythme, rétention, habillage et formats courts.">
 <script defer src="/_vercel/insights/script.js"></script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0e0e'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='800' font-size='34' text-anchor='middle' fill='%23f2f2f2'%3ED%3C/text%3E%3Ccircle cx='49' cy='42' r='4' fill='%23E8B04B'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500&display=swap">
 <style>
-:root{--bg:#0e0e0e;--bg2:#151515;--line:#242424;--txt:#f2f2f2;--mut:#bdbdbd;--acc:#E8B04B;--serif:'Playfair Display',Georgia,serif}
+:root{--bg:#0b0b0c;--bg2:#141416;--card:#18181b;--line:#26262a;--txt:#f4f4f5;--mut:#b4b4bb;--acc:#E8B04B;--serif:'Playfair Display',Georgia,serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{display:block;max-width:100%}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 .serif{font-family:var(--serif);font-style:italic;font-weight:400}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .2s ease}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .2s ease,background .2s ease}
 .btn:hover{transform:translateY(-1px)}
-.btn-acc{background:var(--acc);color:#0e0e0e}
-.btn-light{background:var(--txt);color:#0e0e0e}
-.btn-ghost{background:transparent;color:var(--txt);border:1px solid #555}
-.eyebrow{margin:0;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--mut)}
-h2{margin:0;font-size:clamp(32px,4.5vw,54px);line-height:1.05;font-weight:700;letter-spacing:-.02em}
-.head{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
-header{position:sticky;top:0;z-index:40;background:rgba(14,14,14,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.btn-acc{background:var(--acc);color:#0b0b0c}
+.btn-light{background:var(--txt);color:#0b0b0c}
+.btn-ghost{background:rgba(255,255,255,.08);color:var(--txt);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px)}
+h2{margin:0;font-size:clamp(28px,3.6vw,44px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
+.sec-head p{margin:6px 0 0;color:var(--mut);font-size:16px}
+section{scroll-margin-top:80px}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(11,11,12,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
 .logo{font-weight:800;letter-spacing:.08em;font-size:18px;text-decoration:none}
 .logo span{color:var(--acc)}
 .tabs{display:flex;gap:4px}
-.tabs a{text-decoration:none;font-size:14px;font-weight:600;color:#bdbdbd;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center}
+.tabs a{text-decoration:none;font-size:14px;font-weight:600;color:#b4b4bb;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center}
 .tabs a.on,.tabs a:hover{color:#fff}
 .tabs a.on{box-shadow:inset 0 -2px 0 var(--acc)}
 .hdr-r{display:flex;align-items:center;gap:12px}
 .lang{display:inline-flex;gap:2px;border:1px solid #333;border-radius:999px;padding:3px;font-size:13px;font-weight:600}
-.lang a{text-decoration:none;padding:7px 12px;border-radius:999px;color:#bdbdbd;min-height:32px;display:inline-flex;align-items:center}
-.lang a.on{background:#2a2a2a;color:#fff}
-.intro{padding:110px 0 70px}
-.intro .wrap{display:flex;flex-direction:column;gap:26px;max-width:900px}
-.kicker{margin:0;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#d0d0d0}
-.intro h1{margin:0;font-size:clamp(42px,6.5vw,84px);line-height:1.02;font-weight:700;letter-spacing:-.02em}
-.intro p.lead{margin:0;max-width:600px;font-size:18px;line-height:1.6;color:#d0d0d0}
-.skills{display:flex;flex-wrap:wrap;gap:10px}
-.skills em{font-style:normal;font-size:14px;color:#e0e0e0;border:1px solid #333;border-radius:999px;padding:10px 16px}
-.works{padding:40px 0 120px}
-.works .wrap{display:flex;flex-direction:column;gap:56px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.vid{display:flex;flex-direction:column;gap:14px;background:none;border:0;padding:0;color:var(--txt);text-align:left;cursor:pointer;font-family:inherit}
-.thumb{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#1a1a1a}
-.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.vid:hover .thumb img{transform:scale(1.04)}
-.play{position:absolute;left:50%;top:50%;width:66px;height:66px;margin:-33px 0 0 -33px;border-radius:50%;border:1px solid rgba(255,255,255,.8);background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;transition:background .3s ease}
-.vid:hover .play{background:var(--acc);border-color:var(--acc)}
-.vid:hover .play path{fill:#0e0e0e}
-.meta{display:flex;flex-direction:column;gap:6px}
-.meta strong{font-size:19px;font-weight:600;line-height:1.35}
-.meta small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#bdbdbd}
-.cta{background:var(--bg2);border-top:1px solid var(--line)}
-.cta .wrap{padding-top:100px;padding-bottom:100px;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
-.cta p{margin:0;max-width:560px;font-size:17px;line-height:1.6;color:#c8c8c8}
-.cta .row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:#a3a3a3;border-top:1px solid var(--line)}
+.lang a{text-decoration:none;padding:7px 12px;border-radius:999px;color:#b4b4bb;min-height:32px;display:inline-flex;align-items:center}
+.lang a.on{background:#2a2a2e;color:#fff}
+
+/* hero */
+.hero{position:relative;min-height:min(88vh,820px);display:flex;align-items:flex-end;overflow:hidden;background:#000}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transform:scale(1.06);filter:saturate(1.05)}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,12,.95) 0%,rgba(11,11,12,.65) 45%,rgba(11,11,12,.15) 100%),linear-gradient(0deg,var(--bg) 0%,rgba(11,11,12,0) 40%);z-index:1}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:120px;padding-bottom:70px;display:flex;flex-direction:column;gap:22px}
+.tag{align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:var(--acc);color:#0b0b0c;padding:7px 12px;border-radius:6px}
+.hero h1{margin:0;max-width:820px;font-size:clamp(42px,6.4vw,86px);line-height:1;font-weight:800;letter-spacing:-.025em}
+.hero .lead{margin:0;max-width:560px;font-size:18px;line-height:1.6;color:#d4d4d8}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.channels{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;margin-top:18px}
+.channels small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#a1a1aa}
+.channels span{font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#e4e4e7;font-size:15px}
+
+/* featured */
+.featured{padding:40px 0 20px}
+.feat{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.feat .media{position:relative;aspect-ratio:16/9;cursor:pointer;border:0;padding:0;background:#000}
+.feat .media img{width:100%;height:100%;object-fit:cover}
+.feat .info{padding:34px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.feat .info small{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+.feat .info h3{margin:0;font-size:clamp(20px,2.2vw,28px);line-height:1.25;font-weight:700}
+.feat .info p{margin:0;color:var(--mut);font-size:15px}
+
+/* rows (carousels) */
+.row-sec{padding:44px 0 10px}
+.rail-wrap{position:relative}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,calc((100% - 48px)/3));gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;scrollbar-width:thin;scrollbar-color:#333 transparent}
+.rail::-webkit-scrollbar{height:6px}.rail::-webkit-scrollbar-thumb{background:#333;border-radius:3px}
+.arrows{display:flex;gap:8px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:1px solid #3a3a3f;background:#151517;color:#fff;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.arrows button:hover{border-color:#fff}
+.vid{scroll-snap-align:start;display:flex;flex-direction:column;gap:12px;background:none;border:0;padding:0;color:var(--txt);text-align:left;cursor:pointer;font-family:inherit}
+.thumb{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#1a1a1d}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.vid:hover .thumb img,.feat .media:hover img{transform:scale(1.05)}
+.play{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;transition:background .25s ease,transform .25s ease}
+.vid:hover .play,.feat .media:hover .play{background:var(--acc);border-color:var(--acc);transform:scale(1.06)}
+.vid:hover .play path,.feat .media:hover .play path{fill:#0b0b0c}
+.badge{position:absolute;left:10px;top:10px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.65);padding:5px 8px;border-radius:5px}
+.meta strong{display:block;font-size:16px;font-weight:600;line-height:1.35}
+.meta small{display:block;margin-top:5px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a1a1aa}
+
+/* included */
+.included{padding:80px 0 20px}
+.inc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.inc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.inc .ic{width:46px;height:46px;border-radius:12px;background:rgba(232,176,75,.12);color:var(--acc);display:flex;align-items:center;justify-content:center}
+.inc strong{font-size:18px}
+.inc span{color:var(--mut);font-size:15px;line-height:1.55}
+
+/* offers */
+.offers{padding:80px 0 20px}
+.off-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.off{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:16px}
+.off.best{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc) inset;background:linear-gradient(180deg,#1f1a10 0%,var(--card) 45%)}
+.off .pill{position:absolute;top:-13px;left:24px;background:var(--acc);color:#0b0b0c;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:6px}
+.off h3{margin:0;font-size:22px}
+.off .price{font-size:30px;font-weight:800;letter-spacing:-.01em}
+.off .price small{font-size:14px;font-weight:500;color:var(--mut)}
+.off ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;flex:1}
+.off li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#d4d4d8;line-height:1.45}
+.off li::before{content:"";flex:0 0 18px;height:18px;margin-top:1px;border-radius:50%;background:var(--acc) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b0b0c' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.off .btn{width:100%}
+
+/* steps */
+.steps{padding:80px 0 20px}
+.st-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:s}
+.st{border-top:2px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:8px}
+.st b{color:var(--acc);font-size:14px}
+.st strong{font-size:18px}
+.st span{color:var(--mut);font-size:15px;line-height:1.5}
+
+/* faq */
+.faq{padding:80px 0 40px}
+.faq-list{display:flex;flex-direction:column;gap:10px;max-width:860px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 22px}
+summary{list-style:none;cursor:pointer;padding:20px 0;font-weight:600;font-size:16px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;color:var(--acc);font-weight:400}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 20px;color:var(--mut);line-height:1.6;font-size:15px}
+
+/* cta */
+.cta{margin-top:60px;background:var(--bg2);border-top:1px solid var(--line)}
+.cta .wrap{padding-top:90px;padding-bottom:90px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.cta p{margin:0;max-width:560px;font-size:17px;line-height:1.6;color:#c8c8cf}
+.cta .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+footer .wrap{padding-top:30px;padding-bottom:30px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:#a3a3a3;border-top:1px solid var(--line)}
 footer a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;min-height:44px}
+
+/* sticky mobile bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(11,11,12,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.sticky .btn{width:100%}
+
+/* modal */
 .modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:24px}
 .modal.open{display:flex}
-.modal .box{width:min(1100px,100%);aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden}
+.modal .box{width:min(1100px,100%);aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden}
 .modal .box iframe{width:100%;height:100%;border:0;display:block}
 .close{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid #555;background:rgba(14,14,14,.7);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
-@media (max-width:860px){.grid{grid-template-columns:1fr}.intro{padding-top:70px}}
-@media (max-width:720px){header .btn{display:none}header .wrap{flex-wrap:wrap;row-gap:4px}.tabs{order:3;width:100%}.tabs a{padding:8px 10px;font-size:13px;min-height:40px}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media (max-width:960px){
+  .feat{grid-template-columns:1fr}
+  .inc-grid,.off-grid{grid-template-columns:1fr 1fr}
+  .st-grid{grid-template-columns:1fr 1fr}
+  .rail{grid-auto-columns:minmax(260px,70%)}
+}
+@media (max-width:720px){
+  header .btn{display:none}
+  header .wrap{flex-wrap:wrap;row-gap:4px}
+  .tabs{order:3;width:100%}
+  .tabs a{padding:8px 10px;font-size:13px;min-height:40px}
+  .inc-grid,.off-grid,.st-grid{grid-template-columns:1fr}
+  .off-grid{gap:26px}
+  .rail{grid-auto-columns:85%}
+  .arrows{display:none}
+  .sticky{display:block}
+  body{padding-bottom:76px}
+  .hero .wrap{padding-top:80px;padding-bottom:40px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -82,42 +173,128 @@ footer a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;min
     <nav class="tabs" aria-label="Sections"><a href="/" id="tab-ev" data-i18n="tabEv">Événements</a><a href="/montage" class="on" id="tab-yt" data-i18n="tabYt">Montage YouTube</a></nav>
     <div class="hdr-r">
       <nav class="lang" aria-label="Langue"><a href="/montage" id="lang-fr">FR</a><a href="/en/montage" id="lang-en">EN</a></nav>
-      <a href="#contact" class="btn btn-light" data-i18n="cta">Travailler ensemble</a>
+      <a href="#offres" class="btn btn-light" data-i18n="ctaTop">Voir les formules</a>
     </div>
   </div>
 </header>
 
 <main>
-<section class="intro">
+<section class="hero" id="top">
+  <img class="hero-bg" id="heroBg" alt="">
   <div class="wrap">
-    <p class="kicker" data-i18n="kicker">Montage vidéo · Créateurs de contenu</p>
-    <h1 data-i18n-html="h1">Des montages qui<br><span class="serif">gardent l’audience</span></h1>
-    <p class="lead" data-i18n="lead">Je monte des vidéos YouTube pensées pour la rétention : rythme, narration, habillage et formats courts pour faire vivre chaque vidéo sur les réseaux.</p>
-    <div class="skills">
-      <em data-i18n="k1">Montage long format</em>
-      <em data-i18n="k2">Narration & rythme</em>
-      <em data-i18n="k3">Motion design</em>
-      <em data-i18n="k4">Sous-titres</em>
-      <em data-i18n="k5">Shorts & Reels</em>
+    <span class="tag" data-i18n="tag">Montage YouTube</span>
+    <h1 data-i18n-html="h1">Le montage qui fait<br><span class="serif">rester ton audience</span></h1>
+    <p class="lead" data-i18n="lead">Narration, rythme, habillage et formats courts : je transforme tes rushs en vidéos qu’on regarde jusqu’au bout.</p>
+    <div class="ctas">
+      <a href="#offres" class="btn btn-acc" data-i18n="ctaHero">Voir les formules</a>
+      <a href="#films" class="btn btn-ghost" data-i18n="ctaWatch">Voir mes montages</a>
+    </div>
+    <div class="channels">
+      <small data-i18n="trust">Ils me confient leurs vidéos</small>
+      <span>HYCONIQ</span><span>Baobab Togo</span><span>Frederick Itoua</span>
     </div>
   </div>
 </section>
 
-<section class="works" id="realisations">
+<section class="featured" id="films">
   <div class="wrap">
-    <div class="head">
-      <p class="eyebrow" data-i18n="ey">réalisations.</p>
-      <h2 data-i18n="worksH">Mes montages</h2>
+    <div class="sec-head"><div><h2 data-i18n="featH">À la une</h2></div></div>
+    <div class="feat" id="feat"></div>
+  </div>
+</section>
+
+<section class="row-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 data-i18n="allH">Tous mes montages</h2><p data-i18n="allP">Formats longs : analyses, interviews, parcours.</p></div>
+      <div class="arrows"><button type="button" id="prev" aria-label="Précédent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" id="next" aria-label="Suivant"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div>
     </div>
-    <div class="grid" id="grid"></div>
+    <div class="rail" id="rail"></div>
+  </div>
+</section>
+
+<section class="included" id="inclus">
+  <div class="wrap">
+    <div class="sec-head"><div><h2 data-i18n="incH">Ce qui est inclus</h2><p data-i18n="incP">Tout ce qu’il faut pour qu’une vidéo soit prête à publier.</p></div></div>
+    <div class="inc-grid">
+      <div class="inc"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h7"/></svg></span><strong data-i18n="i1t">Narration & rythme</strong><span data-i18n="i1d">Dérushage, structure, coupes qui tiennent l’attention du début à la fin.</span></div>
+      <div class="inc"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/></svg></span><strong data-i18n="i2t">Habillage & motion design</strong><span data-i18n="i2d">Titres, illustrations, zooms et animations au service du propos.</span></div>
+      <div class="inc"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 13h4M13 13h4M7 16h10"/></svg></span><strong data-i18n="i3t">Sous-titres</strong><span data-i18n="i3d">Sous-titres lisibles et dynamiques, pour le visionnage sans le son.</span></div>
+      <div class="inc"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span><strong data-i18n="i4t">Son & musique</strong><span data-i18n="i4d">Nettoyage de la voix, mixage, musique et effets sonores.</span></div>
+      <div class="inc"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><strong data-i18n="i5t">Shorts & Reels</strong><span data-i18n="i5d">Les meilleurs moments déclinés en formats verticaux.</span></div>
+      <div class="inc"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span><strong data-i18n="i6t">Allers-retours</strong><span data-i18n="i6d">Tes retours sont intégrés jusqu’à la version finale.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="offers" id="offres">
+  <div class="wrap">
+    <div class="sec-head"><div><h2 data-i18n="offH">Les formules</h2><p data-i18n="offP">Choisis selon ton rythme de publication. Tarif précis après un premier échange.</p></div></div>
+    <div class="off-grid">
+      <div class="off">
+        <h3 data-i18n="o1t">À la vidéo</h3>
+        <div class="price" data-i18n-html="o1p">Sur devis <small>/ vidéo</small></div>
+        <ul>
+          <li data-i18n="o1a">Montage d’une vidéo long format</li>
+          <li data-i18n="o1b">Habillage et sous-titres</li>
+          <li data-i18n="o1c">Allers-retours inclus</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-i18n="choose">Je choisis</a>
+      </div>
+      <div class="off best">
+        <span class="pill" data-i18n="popular">Recommandé</span>
+        <h3 data-i18n="o2t">Abonnement mensuel</h3>
+        <div class="price" data-i18n-html="o2p">Sur devis <small>/ mois</small></div>
+        <ul>
+          <li data-i18n="o2a">Plusieurs vidéos par mois</li>
+          <li data-i18n="o2b">Habillage récurrent de ta chaîne</li>
+          <li data-i18n="o2c">Shorts tirés de chaque vidéo</li>
+          <li data-i18n="o2d">Priorité sur les délais</li>
+        </ul>
+        <a href="#contact" class="btn btn-acc" data-i18n="choose">Je choisis</a>
+      </div>
+      <div class="off">
+        <h3 data-i18n="o3t">Pack Shorts</h3>
+        <div class="price" data-i18n-html="o3p">Sur devis <small>/ pack</small></div>
+        <ul>
+          <li data-i18n="o3a">Formats verticaux à partir de tes vidéos</li>
+          <li data-i18n="o3b">Sous-titres dynamiques</li>
+          <li data-i18n="o3c">Prêts pour TikTok, Reels et Shorts</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-i18n="choose">Je choisis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head"><div><h2 data-i18n="stH">Comment ça se passe</h2></div></div>
+    <div class="st-grid">
+      <div class="st"><b>01</b><strong data-i18n="s1t">Tu m’envoies tes rushs</strong><span data-i18n="s1d">Via un lien de transfert, avec tes idées et tes références.</span></div>
+      <div class="st"><b>02</b><strong data-i18n="s2t">Premier montage</strong><span data-i18n="s2d">Je construis le récit, le rythme et l’habillage.</span></div>
+      <div class="st"><b>03</b><strong data-i18n="s3t">Tes retours</strong><span data-i18n="s3d">On ajuste ensemble jusqu’à ce que ça te ressemble.</span></div>
+      <div class="st"><b>04</b><strong data-i18n="s4t">Livraison</strong><span data-i18n="s4d">Vidéo finale et Shorts prêts à publier.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head"><div><h2 data-i18n="faqH">Questions fréquentes</h2></div></div>
+    <div class="faq-list">
+      <details><summary data-i18n="q1">Comment t’envoyer mes rushs ?</summary><p data-i18n="a1">Par un lien de transfert (WeTransfer, Google Drive, Dropbox…). Je t’indique tout lors du premier échange.</p></details>
+      <details><summary data-i18n="q2">Quels types de vidéos tu montes ?</summary><p data-i18n="a2">Analyses, interviews, parcours, vlogs et formats courts. Regarde mes montages plus haut pour te faire une idée.</p></details>
+      <details><summary data-i18n="q3">Combien de retours sont possibles ?</summary><p data-i18n="a3">Les allers-retours sont inclus. On fixe ensemble le nombre au début du projet.</p></details>
+      <details><summary data-i18n="q4">Combien ça coûte ?</summary><p data-i18n="a4">Ça dépend de la durée, du niveau d’habillage et du rythme de publication. Envoie-moi ta chaîne et je te fais une proposition.</p></details>
+    </div>
   </div>
 </section>
 
 <section class="cta" id="contact">
   <div class="wrap">
-    <p class="eyebrow" data-i18n="eyC">on en parle ?</p>
-    <h2 data-i18n-html="ctaH">Besoin d’un monteur<br>pour ta chaîne ?</h2>
-    <p data-i18n="ctaP">Envoie-moi un message avec le lien de ta chaîne et le type de vidéos que tu publies.</p>
+    <h2 data-i18n-html="ctaH">Prêt à passer<br><span class="serif">au niveau supérieur ?</span></h2>
+    <p data-i18n="ctaP">Envoie-moi le lien de ta chaîne et le type de vidéos que tu publies. Je te réponds avec une proposition.</p>
     <div class="row">
       <a href="https://www.instagram.com/dema.visual/" target="_blank" rel="noopener" class="btn btn-acc" data-i18n="ig">Écrire sur Instagram</a>
       <a href="https://calendar.app.google/DetBsN2k4Vv92nbA9" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="call">Réserver un appel</a>
@@ -128,11 +305,13 @@ footer a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;min
 
 <footer>
   <div class="wrap">
-    <span style="font-weight:700;letter-spacing:.08em;color:#f2f2f2">DEMA Production<span style="color:var(--acc)">.</span></span>
+    <span style="font-weight:700;letter-spacing:.08em;color:#f4f4f5">DEMA Production<span style="color:var(--acc)">.</span></span>
     <a href="https://www.instagram.com/dema.visual/" target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>@dema.visual</a>
   </div>
 </footer>
+
+<div class="sticky"><a href="#offres" class="btn btn-acc" data-i18n="ctaHero">Voir les formules</a></div>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Lecteur vidéo">
   <button class="close" id="close" aria-label="Fermer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
@@ -140,9 +319,9 @@ footer a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;min
 </div>
 
 <script>
-/* Pour ajouter une vidéo : une ligne de plus dans cette liste. */
+/* Pour ajouter une vidéo : une ligne de plus. "featured: true" = la vidéo mise à la une. */
 var VIDEOS = [
-  { id: "Lu6vlfAe15Q", start: 249, title: "Comment ISHOWSPEED est devenu le plus grand streameur du monde - LSD #152", channel: "HYCONIQ", role: { fr: "Montage", en: "Editing" } },
+  { id: "Lu6vlfAe15Q", start: 249, featured: true, title: "Comment ISHOWSPEED est devenu le plus grand streameur du monde - LSD #152", channel: "HYCONIQ", role: { fr: "Montage", en: "Editing" } },
   { id: "buXh0D-srSA", start: 327, title: "Comment les artistes FR peuvent BATTRE les américains", channel: "HYCONIQ", role: { fr: "Montage", en: "Editing" } },
   { id: "GqdTBNN_qOs", start: 572, title: "Comment créer sa marque de vêtements grâce aux réseaux sociaux (Ma méthode)", channel: "HYCONIQ program", role: { fr: "Montage", en: "Editing" } },
   { id: "Gv6imhDL19A", start: 79, title: "Ce que le #TOGO m'a appris sur la réussite 🇹🇬 | M.Ayité Creppy | Parcours #1", channel: "Baobab Togo", role: { fr: "Montage", en: "Editing" } },
@@ -152,12 +331,34 @@ var VIDEOS = [
 (function(){
   var isEN=/^\/en(\/|$)/.test(location.pathname);
   var T={
-    tabEv:"Events",tabYt:"YouTube editing",cta:"Work together",kicker:"Video editing · Content creators",
-    h1:'Edits that<br><span class="serif">keep viewers watching</span>',
-    lead:"I edit YouTube videos built for retention: pacing, storytelling, graphics and short formats to give every video a second life on social media.",
-    k1:"Long-form editing",k2:"Storytelling & pacing",k3:"Motion design",k4:"Subtitles",k5:"Shorts & Reels",
-    ey:"my work.",worksH:"My edits",eyC:"let's talk?",ctaH:"Need an editor<br>for your channel?",
-    ctaP:"Send me a message with your channel link and the kind of videos you publish.",ig:"Message on Instagram",call:"Book a call"
+    tabEv:"Events",tabYt:"YouTube editing",ctaTop:"See plans",tag:"YouTube editing",
+    h1:'Editing that keeps<br><span class="serif">your audience watching</span>',
+    lead:"Storytelling, pacing, graphics and short formats: I turn your footage into videos people watch to the end.",
+    ctaHero:"See plans",ctaWatch:"Watch my edits",trust:"Creators who trust me",
+    featH:"Featured",allH:"All my edits",allP:"Long formats: breakdowns, interviews, life stories.",
+    incH:"What's included",incP:"Everything a video needs to be ready to publish.",
+    i1t:"Storytelling & pacing",i1d:"Footage review, structure and cuts that hold attention from start to finish.",
+    i2t:"Graphics & motion design",i2d:"Titles, illustrations, zooms and animations that serve the message.",
+    i3t:"Subtitles",i3d:"Readable, dynamic subtitles for sound-off viewing.",
+    i4t:"Sound & music",i4d:"Voice cleanup, mixing, music and sound effects.",
+    i5t:"Shorts & Reels",i5d:"The best moments turned into vertical formats.",
+    i6t:"Revisions",i6d:"Your feedback is included until the final version.",
+    offH:"Plans",offP:"Pick what fits your publishing pace. Exact price after a first chat.",
+    o1t:"Per video",o1p:'On quote <small>/ video</small>',o1a:"Editing of one long-form video",o1b:"Graphics and subtitles",o1c:"Revisions included",
+    popular:"Recommended",o2t:"Monthly plan",o2p:'On quote <small>/ month</small>',o2a:"Several videos per month",o2b:"Consistent channel branding",o2c:"Shorts from every video",o2d:"Priority turnaround",
+    o3t:"Shorts pack",o3p:'On quote <small>/ pack</small>',o3a:"Vertical formats from your videos",o3b:"Dynamic subtitles",o3c:"Ready for TikTok, Reels and Shorts",
+    choose:"Choose",stH:"How it works",
+    s1t:"Send your footage",s1d:"Through a transfer link, with your ideas and references.",
+    s2t:"First cut",s2d:"I build the story, pacing and graphics.",
+    s3t:"Your feedback",s3d:"We fine-tune together until it feels like you.",
+    s4t:"Delivery",s4d:"Final video and Shorts ready to publish.",
+    faqH:"FAQ",q1:"How do I send my footage?",a1:"Through a transfer link (WeTransfer, Google Drive, Dropbox…). I'll explain everything in our first chat.",
+    q2:"What kind of videos do you edit?",a2:"Breakdowns, interviews, life stories, vlogs and short formats. Check my edits above to get an idea.",
+    q3:"How many revisions?",a3:"Revisions are included. We agree on the number at the start of the project.",
+    q4:"How much does it cost?",a4:"It depends on length, level of graphics and your publishing pace. Send me your channel and I'll make you an offer.",
+    ctaH:'Ready to take<br><span class="serif">your channel further?</span>',
+    ctaP:"Send me your channel link and the kind of videos you publish. I'll get back to you with an offer.",
+    ig:"Message on Instagram",call:"Book a call"
   };
   if(isEN){
     document.documentElement.lang='en';
@@ -165,27 +366,48 @@ var VIDEOS = [
     document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n'); if(T[k]) el.textContent=T[k];});
     document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html'); if(T[k]) el.innerHTML=T[k];});
     document.getElementById('tab-ev').href='/en'; document.getElementById('tab-yt').href='/en/montage'; document.getElementById('logo').href='/en';
+    document.getElementById('prev').setAttribute('aria-label','Previous'); document.getElementById('next').setAttribute('aria-label','Next');
   }
   (isEN?document.getElementById('lang-en'):document.getElementById('lang-fr')).classList.add('on');
 
-  var grid=document.getElementById('grid');
-  VIDEOS.forEach(function(v){
-    var b=document.createElement('button'); b.className='vid'; b.setAttribute('aria-label',(isEN?'Play: ':'Lire : ')+v.title);
-    b.innerHTML='<span class="thumb"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+v.id+'/maxresdefault.jpg" onload="if(this.naturalWidth<200&&!this.dataset.fb){this.dataset.fb=1;this.src=\'https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg\'}" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg\'"><span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span></span>'+
-      '<span class="meta"><strong></strong><small></small></span>';
-    b.querySelector('strong').textContent=v.title;
-    b.querySelector('small').textContent=v.channel+' · '+(isEN?v.role.en:v.role.fr);
-    b.addEventListener('click',function(){
-      slot.innerHTML='<div class="box"><iframe src="https://www.youtube-nocookie.com/embed/'+v.id+'?autoplay=1&rel=0&start='+(v.start||0)+'" title="Vidéo" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
-      modal.classList.add('open'); document.body.style.overflow='hidden'; document.getElementById('close').focus();
-    });
-    grid.appendChild(b);
-  });
+  function thumb(id){
+    return 'src="https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg" onload="if(this.naturalWidth<200&&!this.dataset.fb){this.dataset.fb=1;this.src=\'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg\'}" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg\'"';
+  }
+  var PLAY='<span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span>';
   var modal=document.getElementById('modal'),slot=document.getElementById('slot');
+  function open(v){
+    slot.innerHTML='<div class="box"><iframe src="https://www.youtube-nocookie.com/embed/'+v.id+'?autoplay=1&rel=0&start='+(v.start||0)+'" title="Vidéo" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
+    modal.classList.add('open'); document.body.style.overflow='hidden'; document.getElementById('close').focus();
+  }
   function close(){modal.classList.remove('open');slot.innerHTML='';document.body.style.overflow='';}
   document.getElementById('close').addEventListener('click',close);
   modal.addEventListener('click',function(e){if(e.target===modal)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))close();});
+
+  var f=VIDEOS.filter(function(v){return v.featured;})[0]||VIDEOS[0];
+  document.getElementById('heroBg').src='https://i.ytimg.com/vi/'+f.id+'/maxresdefault.jpg';
+  var feat=document.getElementById('feat');
+  feat.innerHTML='<button class="media" type="button"><img alt="" '+thumb(f.id)+'>'+PLAY+'</button><div class="info"><small></small><h3></h3><p></p><div><button type="button" class="btn btn-acc" id="featPlay"></button></div></div>';
+  feat.querySelector('small').textContent=f.channel;
+  feat.querySelector('h3').textContent=f.title;
+  feat.querySelector('p').textContent=(isEN?'My role: ':'Mon rôle : ')+(isEN?f.role.en:f.role.fr);
+  document.getElementById('featPlay').textContent=isEN?'Watch':'Regarder';
+  feat.querySelector('.media').setAttribute('aria-label',(isEN?'Play: ':'Lire : ')+f.title);
+  feat.querySelector('.media').addEventListener('click',function(){open(f);});
+  document.getElementById('featPlay').addEventListener('click',function(){open(f);});
+
+  var rail=document.getElementById('rail');
+  VIDEOS.forEach(function(v){
+    var b=document.createElement('button'); b.type='button'; b.className='vid'; b.setAttribute('aria-label',(isEN?'Play: ':'Lire : ')+v.title);
+    b.innerHTML='<span class="thumb"><img loading="lazy" alt="" '+thumb(v.id)+'>'+PLAY+'</span><span class="meta"><strong></strong><small></small></span>';
+    b.querySelector('strong').textContent=v.title;
+    b.querySelector('small').textContent=v.channel+' · '+(isEN?v.role.en:v.role.fr);
+    b.addEventListener('click',function(){open(v);});
+    rail.appendChild(b);
+  });
+  function step(d){var c=rail.querySelector('.vid'); var w=c?c.getBoundingClientRect().width+24:300; rail.scrollBy({left:d*w,behavior:'smooth'});}
+  document.getElementById('prev').addEventListener('click',function(){step(-1);});
+  document.getElementById('next').addEventListener('click',function(){step(1);});
 })();
 </script>
 </body>
