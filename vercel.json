@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/en", "destination": "/" },
     { "source": "/en/p/:slug", "destination": "/" },
-    { "source": "/p/:slug", "destination": "/" }
+    { "source": "/p/:slug", "destination": "/" },
+    { "source": "/montage", "destination": "/montage.html" },
+    { "source": "/en/montage", "destination": "/montage.html" }
   ]
 }

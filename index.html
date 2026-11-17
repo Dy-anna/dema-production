@@ -130,6 +130,11 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .lang a{text-decoration:none;padding:7px 12px;border-radius:999px;color:#bdbdbd;min-height:32px;display:inline-flex;align-items:center}
 .lang a.on{background:#2a2a2a;color:#fff}
 .hdr-r{display:flex;align-items:center;gap:12px}
+.tabs{display:flex;gap:4px}
+.tabs a{text-decoration:none;font-size:14px;font-weight:600;color:#bdbdbd;padding:10px 12px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center}
+.tabs a.on,.tabs a:hover{color:#fff}
+.tabs a.on{box-shadow:inset 0 -2px 0 var(--acc);border-radius:0}
+@media (max-width:720px){header .btn{display:none}header .wrap{flex-wrap:wrap;row-gap:4px}.tabs{order:3;width:100%}.tabs a{padding:8px 10px;font-size:13px;min-height:40px}}
 footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:#a3a3a3;border-top:1px solid var(--line)}
 footer a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;min-height:44px}
 footer a:hover{color:var(--txt)}
@@ -166,6 +171,7 @@ footer a:hover{color:var(--txt)}
 <header>
   <div class="wrap">
     <a href="#top" class="logo">DEMA Production<span>.</span></a>
+    <nav class="tabs" aria-label="Sections"><a href="/" class="on" id="tab-ev" data-i18n="tabEv">Événements</a><a href="/montage" id="tab-yt" data-i18n="tabYt">Montage YouTube</a></nav>
     <div class="hdr-r">
       <nav class="lang" aria-label="Langue"><a href="/" id="lang-fr">FR</a><a href="/en" id="lang-en">EN</a></nav>
       <a href="#rdv" class="btn btn-light" data-i18n="cta">Prendre rendez-vous</a>
@@ -340,10 +346,11 @@ footer a:hover{color:var(--txt)}
   var slug=(path.match(/\/p\/([^\/?#]+)/)||[])[1]||'';
   var fr=document.getElementById('lang-fr'), en=document.getElementById('lang-en');
   fr.href=slug?'/p/'+slug:'/'; en.href=slug?'/en/p/'+slug:'/en';
+  if(isEN){document.getElementById('tab-ev').href='/en';document.getElementById('tab-yt').href='/en/montage';}
   (isEN?en:fr).classList.add('on');
   if(!isEN) return;
   var T={
-    cta:"Book a call",kicker:"DEMA Production · Corporate events",
+    cta:"Book a call",tabEv:"Events",tabYt:"YouTube editing",kicker:"DEMA Production · Corporate events",
     h1:'Your event,<br><span class="serif">online the same day</span>',
     lead:"Photo and video coverage of corporate events, with express delivery: your content is ready to publish the very same day.",
     seeFilms:"Watch our films",badge:"EXPRESS DELIVERY · SAME DAY · ",
