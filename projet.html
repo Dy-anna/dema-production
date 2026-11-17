@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400&display=swap">
 <style>
-:root{--ink:#0a0a0a;--paper:#ffffff;--soft:#f3f2ef;--mut:#6b6b6b;--acc:#E8B04B}
+:root{--ink:#0a0a0a;--paper:#ffffff;--soft:#f3f2ef;--mut:#6b6b6b;--acc:#ffffff}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
@@ -45,7 +45,7 @@ header nav a{text-decoration:none;min-height:44px;display:inline-flex;align-item
 .film .box img{width:100%;height:100%;object-fit:cover;opacity:.85}
 .film .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:16px;color:#fff;font-size:13px;letter-spacing:.2em;text-transform:uppercase}
 .film .play i{width:84px;height:84px;border-radius:50%;border:1px solid #fff;display:flex;align-items:center;justify-content:center;transition:background .3s ease}
-.film .box:hover .play i{background:var(--acc);border-color:var(--acc)}
+.film .box:hover .play i{background:#fff;border-color:#fff;color:#000}
 .film iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
 .people{padding:110px 0}
 .people h2,.shots h2{margin:0 0 34px;font-weight:300;font-size:clamp(30px,3.4vw,48px);letter-spacing:-.02em}
@@ -172,7 +172,7 @@ var CASES={
   if(L.stats.length){h+='<section class="stats"><div class="wrap">'+L.stats.map(function(s){return '<div class="stat"><b>'+s[0]+'</b><span>'+s[1]+'</span></div>';}).join('')+'</div></section>';}
   h+='<section class="film"><button class="box" id="filmBox" type="button" aria-label="'+(isEN?'Play the film':'Lancer le film')+'"><img src="https://i.ytimg.com/vi/'+C.yt+'/maxresdefault.jpg" alt="" onload="if(this.naturalWidth<200){this.src=\'https://i.ytimg.com/vi/'+C.yt+'/hqdefault.jpg\'}"><span class="play"><i><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></i>'+(isEN?'Watch the film':'Voir le film')+'</span></button></section>';
   if(L.people.length){h+='<section class="people"><div class="wrap"><h2>'+L.peopleH+'</h2><ul>'+L.people.map(function(x){return '<li><b>'+x[0]+'</b><span>'+x[1]+'</span></li>';}).join('')+'</ul></div></section>';}
-  h+='<svg class="ribbon" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,90 C260,10 420,120 720,60 C1000,5 1180,110 1440,30" fill="none" stroke="#E8B04B" stroke-width="10" stroke-linecap="round"/></svg>';
+  h+='<svg class="ribbon" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,90 C260,10 420,120 720,60 C1000,5 1180,110 1440,30" fill="none" stroke="#0a0a0a" stroke-width="10" stroke-linecap="round"/></svg>';
   if(C.shots.length){var cls=['s1','s2','s3','s4','s5','s6'];h+='<section class="shots"><div class="wrap"><h2>'+L.shotsH+'</h2><div class="grid">'+C.shots.map(function(s,i){return '<button type="button" class="'+cls[i%6]+'"><img src="'+s+'" alt="" loading="lazy"></button>';}).join('')+'</div></div></section>';}
   h+='<section class="credits"><div class="wrap"><svg class="monogram" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="cp" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text fill="#fff" font-size="13" letter-spacing="5" font-family="Inter"><textPath href="#cp">DEMA PRODUCTION · STUDIO · PARIS · </textPath></text><text x="100" y="122" text-anchor="middle" fill="#fff" font-family="Playfair Display, Georgia, serif" font-size="64">D</text></svg><div class="cred">'+L.cred.map(function(c){return '<div><small>'+c[0]+'</small><span>'+c[1]+'</span></div>';}).join('')+'</div></div></section>';
   var N=CASES[C.next], NL=isEN?N.en:N.fr;
