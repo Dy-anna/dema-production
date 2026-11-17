@@ -10,6 +10,7 @@
 <meta property="og:image" content="/img/hero.webp">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0e0e'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='800' font-size='34' text-anchor='middle' fill='%23f2f2f2'%3ED%3C/text%3E%3Ccircle cx='49' cy='42' r='4' fill='%23E8B04B'/%3E%3C/svg%3E">
+<script defer src="/_vercel/insights/script.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500&display=swap">
@@ -116,6 +117,19 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .sep{height:1px;background:#262626}
 .card .btn{width:100%;font-size:16px;font-weight:700;padding:18px 28px}
 
+/* trust band */
+.trust{padding:56px 0 8px}
+.trust .wrap{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.trust small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9a9a9a}
+.names{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 44px}
+.names span{font-size:clamp(17px,2vw,22px);font-weight:700;letter-spacing:.06em;color:#cfcfcf;text-transform:uppercase;opacity:.85}
+.names span.serif{text-transform:none;letter-spacing:0;font-weight:400}
+.names2{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.names2 em{font-style:normal;font-size:13px;color:#bdbdbd;border:1px solid #2e2e2e;border-radius:999px;padding:8px 14px}
+.lang{display:inline-flex;gap:2px;border:1px solid #333;border-radius:999px;padding:3px;font-size:13px;font-weight:600}
+.lang a{text-decoration:none;padding:7px 12px;border-radius:999px;color:#bdbdbd;min-height:32px;display:inline-flex;align-items:center}
+.lang a.on{background:#2a2a2a;color:#fff}
+.hdr-r{display:flex;align-items:center;gap:12px}
 footer .wrap{padding-top:32px;padding-bottom:32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:#a3a3a3;border-top:1px solid var(--line)}
 footer a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;min-height:44px}
 footer a:hover{color:var(--txt)}
@@ -152,7 +166,10 @@ footer a:hover{color:var(--txt)}
 <header>
   <div class="wrap">
     <a href="#top" class="logo">DEMA Production<span>.</span></a>
-    <a href="#rdv" class="btn btn-light">Prendre rendez-vous</a>
+    <div class="hdr-r">
+      <nav class="lang" aria-label="Langue"><a href="/" id="lang-fr">FR</a><a href="/en" id="lang-en">EN</a></nav>
+      <a href="#rdv" class="btn btn-light" data-i18n="cta">Prendre rendez-vous</a>
+    </div>
   </div>
 </header>
 
@@ -161,18 +178,18 @@ footer a:hover{color:var(--txt)}
   <img src="/img/hero.webp" alt="" fetchpriority="high">
   <div class="wrap">
     <div class="hero-txt">
-      <p class="kicker">DEMA Production · Événements d’entreprise</p>
-      <h1>Votre événement,<br><span class="serif">en ligne le jour même</span></h1>
-      <p class="lead">Captation photo et vidéo de vos événements d’entreprise, avec livraison express : vos contenus sont prêts à publier le jour même.</p>
+      <p class="kicker" data-i18n="kicker">DEMA Production · Événements d’entreprise</p>
+      <h1 data-i18n-html="h1">Votre événement,<br><span class="serif">en ligne le jour même</span></h1>
+      <p class="lead" data-i18n="lead">Captation photo et vidéo de vos événements d’entreprise, avec livraison express : vos contenus sont prêts à publier le jour même.</p>
       <div class="ctas">
-        <a href="#rdv" class="btn btn-acc">Prendre rendez-vous</a>
-        <a href="#films" class="btn btn-ghost">Voir nos films</a>
+        <a href="#rdv" class="btn btn-acc" data-i18n="cta">Prendre rendez-vous</a>
+        <a href="#films" class="btn btn-ghost" data-i18n="seeFilms">Voir nos films</a>
       </div>
     </div>
     <a href="#films" class="badge" aria-label="Voir nos films">
       <svg class="ring" viewBox="0 0 150 150" width="150" height="150" aria-hidden="true">
         <defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
-        <text fill="#f2f2f2" font-size="11.5" letter-spacing="3" font-family="Inter, sans-serif"><textPath href="#circ">LIVRAISON EXPRESS · LE JOUR MÊME · </textPath></text>
+        <text fill="#f2f2f2" font-size="11.5" letter-spacing="3" font-family="Inter, sans-serif"><textPath href="#circ" data-i18n="badge">LIVRAISON EXPRESS · LE JOUR MÊME · </textPath></text>
       </svg>
       <span class="core"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#0e0e0e"/></svg></span>
     </a>
@@ -181,22 +198,38 @@ footer a:hover{color:var(--txt)}
 
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>CAPTATION D'ÉVÉNEMENTS</span><i>—</i><span>VIDÉO</span><i>—</i><span>PHOTO</span><i>—</i><span>LIVRAISON LE JOUR MÊME</span><i>—</i>
-    <span>CAPTATION D'ÉVÉNEMENTS</span><i>—</i><span>VIDÉO</span><i>—</i><span>PHOTO</span><i>—</i><span>LIVRAISON LE JOUR MÊME</span><i>—</i>
+    <span data-i18n="m1">CAPTATION D'ÉVÉNEMENTS</span><i>—</i><span data-i18n="m2">VIDÉO</span><i>—</i><span>PHOTO</span><i>—</i><span data-i18n="m4">LIVRAISON LE JOUR MÊME</span><i>—</i>
+    <span data-i18n="m1">CAPTATION D'ÉVÉNEMENTS</span><i>—</i><span data-i18n="m2">VIDÉO</span><i>—</i><span>PHOTO</span><i>—</i><span data-i18n="m4">LIVRAISON LE JOUR MÊME</span><i>—</i>
   </div>
 </div>
+
+<section class="trust" aria-label="Références">
+  <div class="wrap">
+    <small data-i18n="trust">Ils nous ont fait confiance</small>
+    <div class="names">
+      <span>MEDEF</span>
+      <span>SCOR</span>
+      <span class="serif">French-African Foundation</span>
+    </div>
+    <div class="names2">
+      <em>Africa Day · Sciences Po</em>
+      <em data-i18n="ev2">Forum d’affaires France-Tchad</em>
+      <em data-i18n="ev3">Dîner de gala French-African Foundation</em>
+    </div>
+  </div>
+</section>
 
 <section class="offer" id="offre">
   <div class="wrap">
     <div class="head reveal">
-      <p class="eyebrow">notre offre.</p>
-      <h2>La livraison <em>express</em> : tourné, monté et posté le jour même</h2>
-      <p class="sub">Vos contenus sortent pendant que votre événement fait encore parler de lui.</p>
+      <p class="eyebrow" data-i18n="eyOffer">notre offre.</p>
+      <h2 data-i18n-html="offerH">La livraison <em>express</em> : tourné, monté et posté le jour même</h2>
+      <p class="sub" data-i18n="offerSub">Vos contenus sortent pendant que votre événement fait encore parler de lui.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><b>01</b><strong>Captation</strong><span>Photo et vidéo pendant votre événement : temps forts, intervenants, ambiance.</span></div>
-      <div class="step reveal"><b>02</b><strong>Montage express</strong><span>Sélection des photos et montage de la vidéo dans la foulée.</span></div>
-      <div class="step reveal"><b>03</b><strong>Posté le jour même</strong><span>Vos contenus sont livrés et prêts à publier sur vos réseaux avant la fin de la journée.</span></div>
+      <div class="step reveal"><b>01</b><strong data-i18n="s1t">Captation</strong><span data-i18n="s1d">Photo et vidéo pendant votre événement : temps forts, intervenants, ambiance.</span></div>
+      <div class="step reveal"><b>02</b><strong data-i18n="s2t">Montage express</strong><span data-i18n="s2d">Sélection des photos et montage de la vidéo dans la foulée.</span></div>
+      <div class="step reveal"><b>03</b><strong data-i18n="s3t">Posté le jour même</strong><span data-i18n="s3d">Vos contenus sont livrés et prêts à publier sur vos réseaux avant la fin de la journée.</span></div>
     </div>
   </div>
 </section>
@@ -204,29 +237,29 @@ footer a:hover{color:var(--txt)}
 <section class="films" id="films">
   <div class="wrap">
     <div class="head reveal">
-      <p class="eyebrow">réalisations.</p>
-      <h2>Nos films</h2>
+      <p class="eyebrow" data-i18n="eyFilms">réalisations.</p>
+      <h2 data-i18n="films">Nos films</h2>
     </div>
     <div class="grid-films">
       <button class="film reveal" data-yt="k3KDI5_aaSY" aria-label="Lire la vidéo Africa Day">
         <img src="/img/v-africaday.webp" alt="" loading="lazy">
         <span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span>
-        <span class="meta"><strong>Africa Day</strong><small>Événement</small></span>
+        <span class="meta"><strong>Africa Day</strong><small data-i18n="event">Événement</small></span>
       </button>
       <button class="film reveal" data-yt="2EXo-99ed2Q" aria-label="Lire la vidéo MEDEF">
         <img src="/img/v-medef.webp" alt="" loading="lazy">
         <span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span>
-        <span class="meta"><strong>MEDEF</strong><small>Événement</small></span>
+        <span class="meta"><strong>MEDEF</strong><small data-i18n="event">Événement</small></span>
       </button>
       <button class="film reveal" data-yt="djxmrc1i19s" aria-label="Lire la vidéo SCOR">
         <img src="/img/v-scor.webp" alt="" loading="lazy">
         <span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span>
-        <span class="meta"><strong>SCOR</strong><small>Événement</small></span>
+        <span class="meta"><strong>SCOR</strong><small data-i18n="event">Événement</small></span>
       </button>
       <button class="film reveal" data-yt="OwMx_dFWQD0" aria-label="Lire la vidéo Gala French Africa Foundation">
         <img src="/img/v-gala.webp" alt="" loading="lazy">
         <span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span>
-        <span class="meta"><strong>Gala French Africa Foundation</strong><small>Événement</small></span>
+        <span class="meta"><strong>Gala French Africa Foundation</strong><small data-i18n="event">Événement</small></span>
       </button>
     </div>
   </div>
@@ -235,8 +268,8 @@ footer a:hover{color:var(--txt)}
 <section class="photos" id="photos">
   <div class="wrap">
     <div class="head reveal">
-      <p class="eyebrow">en images.</p>
-      <h2>Nos photos</h2>
+      <p class="eyebrow" data-i18n="eyPhotos">en images.</p>
+      <h2 data-i18n="photos">Nos photos</h2>
     </div>
     <div class="grid-photos">
       <button class="ph w reveal"><img src="/img/g-amphi.webp" alt="Vue d’ensemble de l’amphithéâtre pendant la cérémonie d’ouverture" loading="lazy"></button>
@@ -255,31 +288,31 @@ footer a:hover{color:var(--txt)}
 <section class="rdv" id="rdv">
   <div class="wrap">
     <div class="rdv-txt reveal">
-      <p class="eyebrow">parlons-en.</p>
-      <h2>Un événement<br>à couvrir ?</h2>
-      <p>Réservez un créneau de 30 minutes. On échange sur votre événement et on vous propose une approche adaptée.</p>
+      <p class="eyebrow" data-i18n="eyRdv">parlons-en.</p>
+      <h2 data-i18n-html="rdvH">Un événement<br>à couvrir ?</h2>
+      <p data-i18n="rdvP">Réservez un créneau de 30 minutes. On échange sur votre événement et on vous propose une approche adaptée.</p>
       <div class="list">
-        <div>Votre événement et vos objectifs</div>
-        <div>Les contenus à livrer le jour même</div>
-        <div>Planning et budget</div>
+        <div data-i18n="l1">Votre événement et vos objectifs</div>
+        <div data-i18n="l2">Les contenus à livrer le jour même</div>
+        <div data-i18n="l3">Planning et budget</div>
       </div>
     </div>
     <div class="card reveal">
       <div class="card-top">
         <img src="/img/g-poignee.webp" alt="" loading="lazy">
-        <span class="pill-acc">Livraison le jour même</span>
+        <span class="pill-acc" data-i18n="m4c">Livraison le jour même</span>
       </div>
       <div class="card-body">
         <div>
-          <h3>Rendez-vous découverte</h3>
-          <p class="who">Avec l’équipe DEMA Production</p>
+          <h3 data-i18n="cardT">Rendez-vous découverte</h3>
+          <p class="who" data-i18n="cardW">Avec l’équipe DEMA Production</p>
         </div>
         <div class="pills">
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Réservation en ligne</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-i18n="online">Réservation en ligne</span></span>
         </div>
         <div class="sep"></div>
-        <a href="https://calendar.app.google/DetBsN2k4Vv92nbA9" class="btn btn-acc" id="book" target="_blank" rel="noopener">Choisir mon créneau
+        <a href="https://calendar.app.google/DetBsN2k4Vv92nbA9" class="btn btn-acc" id="book" target="_blank" rel="noopener"><span data-i18n="book">Choisir mon créneau</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
@@ -300,6 +333,40 @@ footer a:hover{color:var(--txt)}
   <div id="slot"></div>
 </div>
 
+<script>
+(function(){
+  var path=location.pathname;
+  var isEN=/^\/en(\/|$)/.test(path);
+  var slug=(path.match(/\/p\/([^\/?#]+)/)||[])[1]||'';
+  var fr=document.getElementById('lang-fr'), en=document.getElementById('lang-en');
+  fr.href=slug?'/p/'+slug:'/'; en.href=slug?'/en/p/'+slug:'/en';
+  (isEN?en:fr).classList.add('on');
+  if(!isEN) return;
+  var T={
+    cta:"Book a call",kicker:"DEMA Production · Corporate events",
+    h1:'Your event,<br><span class="serif">online the same day</span>',
+    lead:"Photo and video coverage of corporate events, with express delivery: your content is ready to publish the very same day.",
+    seeFilms:"Watch our films",badge:"EXPRESS DELIVERY · SAME DAY · ",
+    m1:"EVENT COVERAGE",m2:"VIDEO",m4:"SAME-DAY DELIVERY",
+    trust:"They trusted us",ev2:"France-Chad Business Forum",ev3:"French-African Foundation gala dinner",
+    eyOffer:"our offer.",offerH:"<em>Express</em> delivery: shot, edited and posted the same day",
+    offerSub:"Your content goes live while people are still talking about your event.",
+    s1t:"Coverage",s1d:"Photo and video during your event: highlights, speakers, atmosphere.",
+    s2t:"Express editing",s2d:"Photo selection and video editing right away.",
+    s3t:"Posted the same day",s3d:"Your content is delivered and ready for your social channels before the day is over.",
+    eyFilms:"our work.",films:"Our films",event:"Event",eyPhotos:"in pictures.",photos:"Our photos",
+    eyRdv:"let's talk.",rdvH:"An event<br>to cover?",
+    rdvP:"Book a 30-minute call. We'll discuss your event and suggest the right approach.",
+    l1:"Your event and your goals",l2:"What to deliver on the day",l3:"Schedule and budget",
+    m4c:"Same-day delivery",cardT:"Discovery call",cardW:"With the DEMA Production team",
+    online:"Online booking",book:"Pick a time slot"
+  };
+  document.documentElement.lang='en';
+  document.title="DEMA Production · Corporate event coverage, delivered the same day";
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n'); if(T[k]) el.textContent=T[k];});
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html'); if(T[k]) el.innerHTML=T[k];});
+})();
+</script>
 <script>
 (function(){
   var modal=document.getElementById('modal'),slot=document.getElementById('slot');
