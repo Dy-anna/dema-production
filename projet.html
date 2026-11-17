@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEMA Production · Étude de cas</title>
+<script defer src="/_vercel/insights/script.js"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23000'/%3E%3Ctext x='32' y='43' font-family='Georgia' font-size='32' text-anchor='middle' fill='%23fff'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400&display=swap">
+<style>
+:root{--ink:#0a0a0a;--paper:#ffffff;--soft:#f3f2ef;--mut:#6b6b6b;--acc:#E8B04B}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+b,strong{font-weight:700}
+header{position:fixed;top:0;left:0;right:0;z-index:30;color:#fff;mix-blend-mode:difference}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:22px;padding-bottom:22px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600;letter-spacing:.18em;font-size:12px;text-transform:uppercase}
+.mark i{width:38px;height:38px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-family:'Playfair Display',Georgia,serif;font-size:20px;letter-spacing:0}
+header nav{display:flex;gap:22px;font-size:13px;font-weight:400}
+header nav a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.hero{position:relative;height:100vh;min-height:560px;background:#000;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.1) 60%),linear-gradient(0deg,rgba(0,0,0,.5),rgba(0,0,0,0) 40%)}
+.hero .txt{position:absolute;z-index:2;left:0;right:0;bottom:12vh}
+.dash{display:flex;gap:6px;margin-bottom:22px}.dash span{width:22px;height:2px;background:#fff;opacity:.5}.dash span:first-child{opacity:1}
+.hero h1{margin:0;font-weight:300;font-size:clamp(36px,5.4vw,76px);line-height:1.04;letter-spacing:-.02em;max-width:900px}
+.hero small{display:block;margin-top:20px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.intro{padding:120px 0 60px}
+.intro .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:60px}
+.intro .lbl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.intro p{margin:0;font-size:clamp(22px,2.3vw,32px);line-height:1.35;letter-spacing:-.01em}
+.stats{padding:20px 0 100px}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid #ddd}
+.stat{padding:28px 20px 0 0}
+.stat b{display:block;font-weight:300;font-size:clamp(40px,5vw,72px);letter-spacing:-.03em;line-height:1}
+.stat span{display:block;margin-top:10px;font-size:14px;color:var(--mut);line-height:1.4}
+.film{background:#000;padding:0}
+.film .box{position:relative;aspect-ratio:16/9;max-height:100vh;width:100%;cursor:pointer;border:0;padding:0;background:#000;display:block}
+.film .box img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.film .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:16px;color:#fff;font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+.film .play i{width:84px;height:84px;border-radius:50%;border:1px solid #fff;display:flex;align-items:center;justify-content:center;transition:background .3s ease}
+.film .box:hover .play i{background:var(--acc);border-color:var(--acc)}
+.film iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+.people{padding:110px 0}
+.people h2,.shots h2{margin:0 0 34px;font-weight:300;font-size:clamp(30px,3.4vw,48px);letter-spacing:-.02em}
+.people ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #ddd}
+.people li{padding:20px 0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:20px;align-items:baseline}
+.people li b{font-weight:600;font-size:18px}
+.people li span{color:var(--mut);font-size:14px;text-align:right}
+.people li:nth-child(odd){padding-right:30px}.people li:nth-child(even){padding-left:30px;border-left:1px solid #ddd}
+.ribbon{display:block;width:100%;height:120px;margin:-30px 0}
+.shots{padding:40px 0 110px;background:var(--soft)}
+.shots .grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.shots button{padding:0;border:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:#ddd}
+.shots img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.shots button:hover img{transform:scale(1.04)}
+.s1{grid-column:span 4;aspect-ratio:4/3}.s2{grid-column:span 2}.s3,.s4,.s5{grid-column:span 2;aspect-ratio:4/5}.s6{grid-column:span 6;aspect-ratio:21/9}
+.credits{background:#000;color:#fff;padding:90px 0}
+.credits .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:60px;align-items:start}
+.monogram{width:150px;height:150px}
+.cred{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 30px}
+.cred div small{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9a9a9a;margin-bottom:6px}
+.cred div span{font-size:15px;line-height:1.5}
+.next{background:#000;color:#fff;border-top:1px solid #222}
+.next a{display:flex;justify-content:space-between;align-items:center;gap:20px;text-decoration:none;padding:40px 0}
+.next small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a9a9a}
+.next b{display:block;font-weight:300;font-size:clamp(28px,3.5vw,52px);letter-spacing:-.02em;margin-top:6px}
+.next i{width:64px;height:64px;border-radius:50%;background:var(--acc);color:#000;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.cta{padding:80px 0;text-align:center;background:#000;color:#fff;border-top:1px solid #222}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:16px 30px;border-radius:999px;background:var(--acc);color:#000;font-weight:600;text-decoration:none}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal img{max-width:min(1200px,100%);max-height:90vh;object-fit:contain;border-radius:12px}
+.close{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+@media (max-width:860px){
+  header nav a:not(.keep){display:none}
+  .intro .wrap{grid-template-columns:1fr;gap:20px}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .people ul{grid-template-columns:1fr}.people li:nth-child(even){padding-left:0;border-left:0}.people li:nth-child(odd){padding-right:0}
+  .shots .grid{grid-template-columns:1fr 1fr}.s1,.s6{grid-column:span 2}.s2,.s3,.s4,.s5{grid-column:span 1;aspect-ratio:4/5}
+  .credits .wrap{grid-template-columns:1fr}.cred{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="/" class="mark" id="home"><i>D</i>DEMA Production</a>
+  <nav><a href="/#projets" id="nav-p" data-t="navP">Projets</a><a href="/montage" id="nav-m" data-t="navM">Montage YouTube</a><a href="/#rdv" class="keep" id="nav-c" data-t="navC">Contact</a></nav>
+</div></header>
+<main id="app"></main>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Photo"><button class="close" id="close" aria-label="Fermer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div id="slot"></div></div>
+<script>
+var CASES={
+  "africa-day":{
+    yt:"k3KDI5_aaSY", hero:"https://i.ytimg.com/vi/k3KDI5_aaSY/maxresdefault.jpg", poster:"/img/v-africaday.webp",
+    fr:{t:"Africa Day 2026",h:"Le plus grand rassemblement <b>dédié à l’Afrique</b> en Europe, au cœur de Sciences Po.",tag:"Événement · Sciences Po Paris · 3 octobre 2026",
+      intro:"Pour sa 3<sup>e</sup> édition, l’AFRICA Day de la French-African Foundation, co-organisé avec Sciences Po et le Groupe AXIAN, a réuni dirigeants, sportifs, ministres et jeunes talents pour une journée entière de tables rondes. <b>DEMA Production a filmé et photographié l’événement.</b>",
+      stats:[["2 000+","participants, en majorité des étudiants"],["3<sup>e</sup>","édition de l’AFRICA Day"],["1","journée complète de tables rondes"],["Paris 7<sup>e</sup>","Sciences Po, rue Saint-Guillaume"]],
+      peopleH:"Des intervenants d’exception",
+      people:[["Tony Elumelu","Président de Heirs Holdings, UBA"],["Sadio Mané","Footballeur international"],["Aurélien Tchouaméni","Real Madrid, équipe de France"],["Ronny Turiaf","Champion NBA"],["Éléonore Caroit","Ministre déléguée chargée de la Francophonie"],["Luis Vassy","Directeur de Sciences Po"],["Jérémie Pellet","Directeur général d’Expertise France"],["Thierry Déau","CEO de Meridiam"]],
+      shotsH:"En images",cred:[["Client","French-African Foundation"],["Co-organisateurs","Sciences Po · Groupe AXIAN"],["Lieu","Sciences Po, Paris"],["Production","DEMA Production"]]},
+    en:{t:"Africa Day 2026",h:"Europe’s largest gathering <b>dedicated to Africa</b>, at the heart of Sciences Po.",tag:"Event · Sciences Po Paris · October 3, 2026",
+      intro:"For its 3<sup>rd</sup> edition, the French-African Foundation’s AFRICA Day, co-organized with Sciences Po and AXIAN Group, brought together business leaders, athletes, ministers and young talent for a full day of panels. <b>DEMA Production filmed and photographed the event.</b>",
+      stats:[["2,000+","attendees, mostly students"],["3<sup>rd</sup>","edition of AFRICA Day"],["1","full day of panels"],["Paris 7<sup>th</sup>","Sciences Po, rue Saint-Guillaume"]],
+      peopleH:"Outstanding speakers",
+      people:[["Tony Elumelu","Chairman, Heirs Holdings, UBA"],["Sadio Mané","International footballer"],["Aurélien Tchouaméni","Real Madrid, France national team"],["Ronny Turiaf","NBA champion"],["Éléonore Caroit","French Minister Delegate for Francophonie"],["Luis Vassy","Director, Sciences Po"],["Jérémie Pellet","CEO, Expertise France"],["Thierry Déau","CEO, Meridiam"]],
+      shotsH:"In pictures",cred:[["Client","French-African Foundation"],["Co-organizers","Sciences Po · AXIAN Group"],["Venue","Sciences Po, Paris"],["Production","DEMA Production"]]},
+    shots:["/img/g-amphi.webp","/img/g-ministre.webp","/img/g-public.webp","/img/g-pouce.webp","/img/g-panel.webp","/img/g-scene.webp"],
+    next:"forum-france-tchad"
+  },
+  "forum-france-tchad":{
+    yt:"2EXo-99ed2Q", hero:"/img/v-medef.webp",
+    fr:{t:"Forum d’affaires France-Tchad",h:"Une journée pour <b>connecter les investisseurs</b> au plan Tchad Connexion 2030.",tag:"Événement · Salons Hoche, Paris · 25 septembre 2026",
+      intro:"Co-organisé par MEDEF International et la République du Tchad, le Forum d’affaires France-Tchad a réuni autorités, entreprises, investisseurs et bailleurs autour des priorités économiques du Tchad : climat des affaires, ateliers d’investissement et rendez-vous B2B. <b>DEMA Production a couvert la journée.</b>",
+      stats:[["250","entreprises françaises et tchadiennes"],["268","projets du plan Tchad Connexion 2030"],["30 Md$","d’investissements recherchés"],["1","journée d’échanges et de rendez-vous B2B"]],
+      peopleH:"Autour de la table",
+      people:[["MEDEF International","Co-organisateur"],["République du Tchad","Co-organisateur"],["Philippe Gautier","Directeur général de MEDEF International"],["Autorités françaises et tchadiennes","Investisseurs, bailleurs, institutions financières"]],
+      shotsH:"",cred:[["Client","MEDEF International"],["Co-organisateur","République du Tchad"],["Lieu","Salons Hoche, Paris 8<sup>e</sup>"],["Production","DEMA Production"]]},
+    en:{t:"France-Chad Business Forum",h:"One day to <b>connect investors</b> with the Chad Connexion 2030 plan.",tag:"Event · Salons Hoche, Paris · September 25, 2026",
+      intro:"Co-organized by MEDEF International and the Republic of Chad, the France-Chad Business Forum gathered authorities, companies, investors and lenders around Chad’s economic priorities: business climate, investment workshops and B2B meetings. <b>DEMA Production covered the day.</b>",
+      stats:[["250","French and Chadian companies"],["268","projects in the Chad Connexion 2030 plan"],["$30bn","in investment sought"],["1","day of talks and B2B meetings"]],
+      peopleH:"Around the table",
+      people:[["MEDEF International","Co-organizer"],["Republic of Chad","Co-organizer"],["Philippe Gautier","CEO, MEDEF International"],["French and Chadian authorities","Investors, lenders, financial institutions"]],
+      shotsH:"",cred:[["Client","MEDEF International"],["Co-organizer","Republic of Chad"],["Venue","Salons Hoche, Paris 8<sup>th</sup>"],["Production","DEMA Production"]]},
+    shots:[], next:"diner-de-gala"
+  },
+  "diner-de-gala":{
+    yt:"OwMx_dFWQD0", hero:"/img/v-gala.webp",
+    fr:{t:"Dîner de gala de la French-African Foundation",h:"Une soirée au <b>Quai d’Orsay</b>, entre dirigeants africains et français.",tag:"Événement · Ministère de l’Europe et des Affaires étrangères · Octobre 2026",
+      intro:"Dans la foulée de l’AFRICA Day, la French-African Foundation a réuni dirigeants français et africains pour son dîner de gala au Ministère de l’Europe et des Affaires étrangères, avec un discours de Tony Elumelu sur l’investissement dans les entrepreneurs africains. <b>DEMA Production a filmé la soirée.</b>",
+      stats:[["Quai d’Orsay","Ministère de l’Europe et des Affaires étrangères"],["1","soirée de gala"],["Keynote","Tony Elumelu"],["Paris","Octobre 2026"]],
+      peopleH:"Invité d’honneur",
+      people:[["Tony Elumelu","Président de Heirs Holdings, fondateur de la Tony Elumelu Foundation"],["French-African Foundation","Organisateur"]],
+      shotsH:"",cred:[["Client","French-African Foundation"],["Lieu","Quai d’Orsay, Paris"],["Format","Film de soirée"],["Production","DEMA Production"]]},
+    en:{t:"French-African Foundation Gala Dinner",h:"An evening at the <b>Quai d’Orsay</b>, with African and French leaders.",tag:"Event · French Ministry for Europe and Foreign Affairs · October 2026",
+      intro:"Right after AFRICA Day, the French-African Foundation gathered French and African leaders for its gala dinner at the French Ministry for Europe and Foreign Affairs, with a keynote by Tony Elumelu on investing in African entrepreneurs. <b>DEMA Production filmed the evening.</b>",
+      stats:[["Quai d’Orsay","Ministry for Europe and Foreign Affairs"],["1","gala evening"],["Keynote","Tony Elumelu"],["Paris","October 2026"]],
+      peopleH:"Guest of honour",
+      people:[["Tony Elumelu","Chairman, Heirs Holdings, founder of the Tony Elumelu Foundation"],["French-African Foundation","Host"]],
+      shotsH:"",cred:[["Client","French-African Foundation"],["Venue","Quai d’Orsay, Paris"],["Format","Evening film"],["Production","DEMA Production"]]},
+    shots:[], next:"scor"
+  },
+  "scor":{
+    yt:"djxmrc1i19s", hero:"/img/v-scor.webp",
+    fr:{t:"SCOR",h:"<b>The Art & Science of Risk</b> : un film pour l’un des leaders mondiaux de la réassurance.",tag:"Corporate · Paris",
+      intro:"Un film pour SCOR, réassureur mondial dont la signature est « The Art & Science of Risk ». <b>Réalisé par DEMA Production.</b>",
+      stats:[],peopleH:"",people:[],shotsH:"",cred:[["Client","SCOR"],["Format","Film corporate"],["Lieu","Paris"],["Production","DEMA Production"]]},
+    en:{t:"SCOR",h:"<b>The Art & Science of Risk</b>: a film for one of the world’s leading reinsurers.",tag:"Corporate · Paris",
+      intro:"A film for SCOR, the global reinsurer whose signature is “The Art & Science of Risk”. <b>Produced by DEMA Production.</b>",
+      stats:[],peopleH:"",people:[],shotsH:"",cred:[["Client","SCOR"],["Format","Corporate film"],["Location","Paris"],["Production","DEMA Production"]]},
+    shots:[], next:"africa-day"
+  }
+};
+(function(){
+  var p=location.pathname, isEN=/^\/en(\/|$)/.test(p), base=isEN?'/en':'';
+  var slug=(p.match(/\/projets\/([^\/?#]+)/)||[])[1]; var C=CASES[slug];
+  var app=document.getElementById('app');
+  if(isEN){document.documentElement.lang='en';document.getElementById('nav-p').textContent='Projects';document.getElementById('nav-m').textContent='YouTube editing';}
+  document.getElementById('home').href=base+'/';document.getElementById('nav-p').href=base+'/#projets';document.getElementById('nav-m').href=base+'/montage';document.getElementById('nav-c').href=base+'/#rdv';
+  if(!C){app.innerHTML='<section class="intro"><div class="wrap"><p>'+(isEN?'Project not found.':'Projet introuvable.')+' <a href="'+base+'/">'+(isEN?'Back home':'Retour à l’accueil')+'</a></p></div></section>';return;}
+  var L=isEN?C.en:C.fr; document.title=L.t+' · DEMA Production';
+  var arrow='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  var h='';
+  h+='<section class="hero"><img src="'+C.hero+'" alt="" onload="if(this.naturalWidth<200&&C_POSTER){this.src=C_POSTER}"><div class="txt"><div class="wrap"><div class="dash"><span></span><span></span><span></span></div><h1>'+L.h+'</h1><small>'+L.tag+'</small></div></div></section>';
+  h+='<section class="intro"><div class="wrap"><span class="lbl">'+L.t+'</span><p>'+L.intro+'</p></div></section>';
+  if(L.stats.length){h+='<section class="stats"><div class="wrap">'+L.stats.map(function(s){return '<div class="stat"><b>'+s[0]+'</b><span>'+s[1]+'</span></div>';}).join('')+'</div></section>';}
+  h+='<section class="film"><button class="box" id="filmBox" type="button" aria-label="'+(isEN?'Play the film':'Lancer le film')+'"><img src="https://i.ytimg.com/vi/'+C.yt+'/maxresdefault.jpg" alt="" onload="if(this.naturalWidth<200){this.src=\'https://i.ytimg.com/vi/'+C.yt+'/hqdefault.jpg\'}"><span class="play"><i><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></i>'+(isEN?'Watch the film':'Voir le film')+'</span></button></section>';
+  if(L.people.length){h+='<section class="people"><div class="wrap"><h2>'+L.peopleH+'</h2><ul>'+L.people.map(function(x){return '<li><b>'+x[0]+'</b><span>'+x[1]+'</span></li>';}).join('')+'</ul></div></section>';}
+  h+='<svg class="ribbon" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,90 C260,10 420,120 720,60 C1000,5 1180,110 1440,30" fill="none" stroke="#E8B04B" stroke-width="10" stroke-linecap="round"/></svg>';
+  if(C.shots.length){var cls=['s1','s2','s3','s4','s5','s6'];h+='<section class="shots"><div class="wrap"><h2>'+L.shotsH+'</h2><div class="grid">'+C.shots.map(function(s,i){return '<button type="button" class="'+cls[i%6]+'"><img src="'+s+'" alt="" loading="lazy"></button>';}).join('')+'</div></div></section>';}
+  h+='<section class="credits"><div class="wrap"><svg class="monogram" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="cp" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text fill="#fff" font-size="13" letter-spacing="5" font-family="Inter"><textPath href="#cp">DEMA PRODUCTION · STUDIO · PARIS · </textPath></text><text x="100" y="122" text-anchor="middle" fill="#fff" font-family="Playfair Display, Georgia, serif" font-size="64">D</text></svg><div class="cred">'+L.cred.map(function(c){return '<div><small>'+c[0]+'</small><span>'+c[1]+'</span></div>';}).join('')+'</div></div></section>';
+  var N=CASES[C.next], NL=isEN?N.en:N.fr;
+  h+='<section class="next"><div class="wrap"><a href="'+base+'/projets/'+C.next+'"><span><small>'+(isEN?'Next project':'Projet suivant')+'</small><b>'+NL.t+'</b></span><i>'+arrow+'</i></a></div></section>';
+  h+='<section class="cta"><div class="wrap"><a class="btn" href="https://calendar.app.google/DetBsN2k4Vv92nbA9" target="_blank" rel="noopener">'+(isEN?'Book a call':'Réserver un appel')+' '+arrow+'</a></div></section>';
+  window.C_POSTER=C.poster||null;
+  app.innerHTML=h;
+  document.getElementById('filmBox').addEventListener('click',function(){
+    this.outerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+C.yt+'?autoplay=1&rel=0" title="'+L.t+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  });
+  var modal=document.getElementById('modal'),slot=document.getElementById('slot');
+  document.querySelectorAll('.shots button').forEach(function(b){b.addEventListener('click',function(){slot.innerHTML='<img src="'+b.querySelector('img').src+'" alt="">';modal.classList.add('open');});});
+  document.getElementById('close').addEventListener('click',function(){modal.classList.remove('open');slot.innerHTML='';});
+  modal.addEventListener('click',function(e){if(e.target===modal){modal.classList.remove('open');slot.innerHTML='';}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){modal.classList.remove('open');slot.innerHTML='';}});
+})();
+</script>
+</body>
+</html>
