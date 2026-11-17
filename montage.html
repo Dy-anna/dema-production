@@ -171,7 +171,7 @@ var VIDEOS = [
   var grid=document.getElementById('grid');
   VIDEOS.forEach(function(v){
     var b=document.createElement('button'); b.className='vid'; b.setAttribute('aria-label',(isEN?'Play: ':'Lire : ')+v.title);
-    b.innerHTML='<span class="thumb"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+v.id+'/maxresdefault.jpg" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg\'"><span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span></span>'+
+    b.innerHTML='<span class="thumb"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+v.id+'/maxresdefault.jpg" onload="if(this.naturalWidth<200&&!this.dataset.fb){this.dataset.fb=1;this.src=\'https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg\'}" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/'+v.id+'/hqdefault.jpg\'"><span class="play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#fff"/></svg></span></span>'+
       '<span class="meta"><strong></strong><small></small></span>';
     b.querySelector('strong').textContent=v.title;
     b.querySelector('small').textContent=v.channel+' · '+(isEN?v.role.en:v.role.fr);
